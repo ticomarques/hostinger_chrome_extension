@@ -1,0 +1,106 @@
+.dimensions {
+  height: 90px;
+  width: 100%;
+}
+
+.threeCardsFlexWrapper {
+    display: flex;
+    flexWrap: wrap;
+    margin: 20px 0 0 0;
+}
+.eachCardHeading {
+    fontWeight: 500;
+    fontSize: 12px;
+    color: rgba(60, 60, 67, 0.6);
+    whiteSpace: pre-wrap;
+}
+
+.eachOfThreeCardsContainer {
+    flex: 1;
+    minWidth: 238px;
+    margin: 0px 0px 15px 12px;
+    borderRadius: 8px;
+    transition: "all ease 0.3s"
+  }
+
+  .eachCard {
+    padding: 12px;
+    borderRadius: 8px;
+    boxShadow:
+      "rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.08) 0px 2px 8px 0px"
+  }
+
+.MuiCard-root {
+  overflow: hidden;
+
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: #fff;
+}
+
+.MuiPaper-elevation1 {
+
+}
+
+.makeStyles-eachCard-10 {
+  padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.08) 0px 2px 8px 0px;
+  border-radius: 8px;
+}
+
+
+
+
+  . {
+    padding
+Shorthand property to set values for the thickness of the padding area. If left is omitted, it is the same as right. If bottom is omitted it is the same as top, if right is omitted it is the same as top. The value may not be negative.
+Learn more
+Don't show
+: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.08) 0px 2px 8px 0px;
+    border-radius: 8px;
+  }
+
+
+
+.box {
+  min-width: 238px;
+  padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.08) 0px 2px 8px 0px;
+  border-radius: 8px;
+  margin: 0 0 0 20px;
+}
+
+.wrapperPlan {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+}
+.logoCurrentOS {
+  padding: 12px 12px 8px 12px;
+  background-color: #f2f3f6;
+  border-radius: 12px;
+}
+.current-os__image {
+  width:32px;
+}
+
+.templateOS {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 6px 0 0 0;
+}
+
+.planTitle {
+  font-size: 13px;
+}
+
+.cardGreen {
+  color: #008361;
+  background-color: #def4f0;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 0 10px;
+}
