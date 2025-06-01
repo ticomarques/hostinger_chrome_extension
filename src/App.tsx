@@ -16,6 +16,10 @@ function App() {
   const [data, setData] = useState();
   const [servers, setServers] = useState();
 
+ 
+
+  
+
   //Fetch the plan data
   const handleFetchPlan = async () => {
     if (!key) {
@@ -37,7 +41,6 @@ function App() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const info: Plan[] = await response.json();
-      console.log(info[0]);
       setData(info[0]);
 
       //fetch monitoring data
@@ -50,11 +53,15 @@ function App() {
 
   //Fetch the monitoring data
   const HandleFetchMonitoring = async (idPlan: number) => {
-    const date_from = '2025-05-28T20:00:00Z';
-    const date_to = '2025-05-29T00:00:00Z';
-    try {
-      const url = `https://developers.hostinger.com/api/vps/v1/virtual-machines/${idPlan}/metrics?date_from=${date_from}&date_to=${date_to}`;
+    const date_to = new Date();
 
+    const nowMilliseconds = date_to.getTime()
+    const ReducedMiliseconds = nowMilliseconds - (22 * 60 * 60 *1000)
+
+    const date_from = new Date(ReducedMiliseconds);    
+
+    try {
+      const url = `https://developers.hostinger.com/api/vps/v1/virtual-machines/${idPlan}/metrics?date_from=${date_from.toJSON()}&date_to=${date_to.toJSON()}`;
       const params = {
         method: 'GET',
         headers: {
