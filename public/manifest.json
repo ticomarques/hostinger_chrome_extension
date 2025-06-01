@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Hostinger monitoring Chrome Extension",
+    "version": "0.0.5",
+    "description": "This project started to solve the problem of monitoring the status of the hostinger hosting service through the chrome browser. You can see the usage of your CPU, memory (RAM), disk and traffic.",
+    "action": {
+      "default_popup": "index.html"
+    },
+    "permissions": []
+  }
