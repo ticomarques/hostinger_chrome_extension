@@ -41,7 +41,6 @@ function App() {
       setData(info[0]);
 
       //fetch monitoring data
-      //const monitoringUrl = 'https://developers.hostinger.com/api/vps/v1/virtual-machines/monitoring';
       HandleFetchMonitoring(info[0].id);
 
     } catch (error) {
@@ -51,11 +50,11 @@ function App() {
 
   //Fetch the monitoring data
   const HandleFetchMonitoring = async (idPlan: number) => {
-    const date_from = '2025-05-28T20%3A00%3A00Z';
-    const date_to = '2025-05-29T00%3A00%3A00Z';
+    const date_from = '2025-05-28T20:00:00Z';
+    const date_to = '2025-05-29T00:00:00Z';
     try {
-      //const url = `https://developers.hostinger.com/api/vps/v1/virtual-machines/${idPlan}/metrics?date_from=${date_from}&$date_to=${date_to}`;
-      const url = `https://developers.hostinger.com/api/vps/v1/virtual-machines/810946/metrics?date_from=2025-05-28T20%3A00%3A00Z&date_to=2025-05-29T00%3A00%3A00Z`
+      const url = `https://developers.hostinger.com/api/vps/v1/virtual-machines/${idPlan}/metrics?date_from=${date_from}&date_to=${date_to}`;
+
       const params = {
         method: 'GET',
         headers: {
@@ -89,9 +88,11 @@ function App() {
         id="apikey"
         name="apikey"
         placeholder="Insira sua API KEY"
+        className="inputKey"
         onChange={handleSubmitKey}
       />
-      <button onClick={handleFetchPlan}>OK</button>
+      <br /><br />
+      <button onClick={handleFetchPlan} className="submit-button">OK</button>
 
       {data && (
         <div>
@@ -109,7 +110,7 @@ function App() {
           <h2>Servers</h2>
 
 
-          <div className="threeCardsFlexWrapper">
+          <div className="rowFlex">
               <div className="box">
                 <div style={{ padding: "0px", height: "45.2px" }}>
                   <span className="eachCardHeading">CPU{"\n"}</span>
@@ -158,7 +159,7 @@ function App() {
 
 
 
-          <div className="threeCardsFlexWrapper">
+          <div className="rowFlex">
               <div className="box">
                 <div style={{ padding: "0px", height: "45.2px" }}>
                   <span className="eachCardHeading">CPU{"\n"}</span>

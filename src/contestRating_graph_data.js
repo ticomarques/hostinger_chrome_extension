@@ -134,6 +134,7 @@ export const optionsPie = {
           { name: 'available', y: 80, color: '#cfc0fa' },
           { name: 'used', y: 20 , color: '#673de6' },
         ],
+        innerSize: '90%',
       },
     ],
   };
