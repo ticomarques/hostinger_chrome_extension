@@ -4,3 +4,121 @@
   padding: 2rem;
   text-align: center;
 }
+
+
+.dimensions {
+  height: 90px;
+  width: 100%;
+}
+
+.inputKey {
+  width: 100%;
+  color: rgb(36, 35, 42);
+  font-size: 16px;
+  line-height: 20px;
+  min-height: 28px;
+  border-radius: 4px;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+  background: rgb(251, 251, 251);
+  transition: all 0.1s ease 0s;
+  :focus, :active{
+      border: 2px solid rgb(103, 61, 230);
+  }  
+  margin: 0 10px 0 0;   
+}
+.submit-button {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 14px;
+  height: 30px;
+  padding: 0px 15px;
+  text-shadow: rgb(0 0 0 / 25%) 0px 3px 8px;
+  background: linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%);
+  transition: all 0.5s ease 0s;
+  :hover{
+      box-shadow: rgb(80 63 205 / 50%) 0px 1px 40px;
+      transition: all 0.1s ease 0s;
+  }            
+}
+
+.rowFlex {
+    display: flex;
+    flexWrap: wrap;
+    margin: 20px 0 0 0;
+}
+.eachCardHeading {
+    fontWeight: 500;
+    fontSize: 12px;
+    color: rgba(60, 60, 67, 0.6);
+    whiteSpace: pre-wrap;
+}
+
+.eachOfThreeCardsContainer {
+    flex: 1;
+    minWidth: 238px;
+    margin: 0px 0px 15px 12px;
+    borderRadius: 8px;
+    transition: "all ease 0.3s"
+}
+
+.eachCard {
+  padding: 12px;
+  borderRadius: 8px;
+  boxShadow: "rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.08) 0px 2px 8px 0px"
+}
+
+
+.makeStyles-eachCard-10 {
+  padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.08) 0px 2px 8px 0px;
+  border-radius: 8px;
+}
+
+.box {
+  min-width: 238px;
+  padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.08) 0px 2px 8px 0px;
+  border-radius: 8px;
+  margin: 0 0 0 20px;
+}
+
+.wrapperPlan {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+}
+.logoCurrentOS {
+  padding: 12px 12px 8px 12px;
+  background-color: #f2f3f6;
+  border-radius: 12px;
+}
+.current-os__image {
+  width:32px;
+}
+
+.templateOS {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 6px 0 0 0;
+}
+
+.planTitle {
+  font-size: 13px;
+}
+
+.cardGreen {
+  color: #008361;
+  background-color: #def4f0;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 0 10px;
+}

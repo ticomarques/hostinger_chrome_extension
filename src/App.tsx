@@ -1,24 +1,20 @@
-import { useState, ChangeEvent } from 'react';
+import { useState } from 'react';
 import './App.css';
-
-import Highcharts from "highcharts";
-import HighchartsReact from "highcharts-react-official";
-
-
-import { highchart_data, optionsPie } from "./contestRating_graph_data";
 
 import "./contestRating_graph.css";
 
-import type {Plan} from './typings';
+import type {Plan, PlanUsage} from './typings';
+
+import AddApiKey from './components/AddApiKey';
+import BoxPlan from './components/BoxPlan';
+import LineGraph from './components/LineGraph';
+import PieGraph from './components/PieGraph';
 
 function App() {
-  const [key, setKey] = useState('');
-  const [data, setData] = useState();
-  const [servers, setServers] = useState();
+  const [key, setKey] = useState<string>('');
+  const [data, setData] = useState<Plan>();
+  const [servers, setServers] = useState<PlanUsage>();
 
- 
-
-  
 
   //Fetch the plan data
   const handleFetchPlan = async () => {
@@ -73,8 +69,8 @@ function App() {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      const info = await response.json();
-      console.log(info);
+      const info:PlanUsage = await response.json();
+      //console.log("Data from server: ", info);
       setServers(info)
 
     } catch (error) {
@@ -82,7 +78,7 @@ function App() {
     }
   }
 
-  const handleSubmitKey = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleSubmitKey = (e: React.ChangeEvent<HTMLInputElement>) => {
     setKey(e.target.value);
   };
 
@@ -90,77 +86,26 @@ function App() {
     <>
       <h1>Hostinger</h1>
       
-      <input
-        type="text"
-        id="apikey"
-        name="apikey"
-        placeholder="Insira sua API KEY"
-        className="inputKey"
-        onChange={handleSubmitKey}
-      />
-      <br /><br />
-      <button onClick={handleFetchPlan} className="submit-button">OK</button>
+      <AddApiKey handleSubmitKey={handleSubmitKey} handleFetchPlan={handleFetchPlan} />
 
-      {data && (
+      {data && servers && (
         <div>
-          <div className="wrapperPlan">
-            <div className="logoCurrentOS">
-              <img src="https://hpanel.hostinger.com/assets/images/vpsOnboarding/ubuntu.svg" alt="Ubuntu 24.04 LTS" className="current-os__image" />
-            </div>
-            <div className="plan">
-              <p className="templateOS">{data.template.name}</p>
-              <span className="planTitle">{data.plan}</span>
-              <span className="cardGreen status">{data.state}</span>
-            </div>
-          </div>
+          
+          <BoxPlan template={data.template.name} plan={data.plan} state={data.state} />
 
           <h2>Servers</h2>
 
-
           <div className="rowFlex">
+            <div className="box">
+              <LineGraph unit={servers?.cpu_usage.unit} usage={servers?.cpu_usage.usage} monit={'CPU'}/>
+            </div>
+
               <div className="box">
-                <div style={{ padding: "0px", height: "45.2px" }}>
-                  <span className="eachCardHeading">CPU{"\n"}</span>
-                  <span style={{ fontSize: "16px", fontWeight: "600" }}> usage </span>
-                  <span style={{ fontSize: "12px", fontWeight: "600" }}>%</span>
-                </div>
-                <div> 
-                  <HighchartsReact
-                    containerProps={{ className: "dimensions" }}
-                    highcharts={Highcharts}
-                    options={highchart_data}
-                  />
-                </div>
+                <LineGraph unit={servers?.ram_usage.unit} usage={servers?.ram_usage.usage} monit={'Memory'}/>
               </div>
 
               <div className="box">
-                <div style={{ padding: "0px", height: "45.2px" }}>
-                  <span className="eachCardHeading">CPU{"\n"}</span>
-                  <span style={{ fontSize: "16px", fontWeight: "600" }}> usage </span>
-                  <span style={{ fontSize: "12px", fontWeight: "600" }}>%</span>
-                </div>
-                <div> 
-                  <HighchartsReact
-                    containerProps={{ className: "dimensions" }}
-                    highcharts={Highcharts}
-                    options={highchart_data}
-                  />
-                </div>
-              </div>
-
-              <div className="box">
-                <div style={{ padding: "0px", height: "45.2px" }}>
-                  <span className="eachCardHeading">Disk{"\n"}</span>
-                  <span style={{ fontSize: "16px", fontWeight: "600" }}> usage </span>
-                  <span style={{ fontSize: "12px", fontWeight: "600" }}>%</span>
-                </div>
-                <div> 
-                  <HighchartsReact
-                    containerProps={{ className: "dimensions" }}
-                    highcharts={Highcharts}
-                    options={optionsPie}
-                  />
-                </div>
+                <PieGraph totalDisk={data.disk} usage={servers?.disk_space.usage}/>
               </div>
           </div>
 
@@ -168,48 +113,15 @@ function App() {
 
           <div className="rowFlex">
               <div className="box">
-                <div style={{ padding: "0px", height: "45.2px" }}>
-                  <span className="eachCardHeading">CPU{"\n"}</span>
-                  <span style={{ fontSize: "16px", fontWeight: "600" }}> usage </span>
-                  <span style={{ fontSize: "12px", fontWeight: "600" }}>%</span>
-                </div>
-                <div> 
-                  <HighchartsReact
-                    containerProps={{ className: "dimensions" }}
-                    highcharts={Highcharts}
-                    options={highchart_data}
-                  />
-                </div>
+                <LineGraph unit={servers?.incoming_traffic.unit} usage={servers?.incoming_traffic.usage} monit={'Incoming'}/>
               </div>
 
               <div className="box">
-                <div style={{ padding: "0px", height: "45.2px" }}>
-                  <span className="eachCardHeading">CPU{"\n"}</span>
-                  <span style={{ fontSize: "16px", fontWeight: "600" }}> usage </span>
-                  <span style={{ fontSize: "12px", fontWeight: "600" }}>%</span>
-                </div>
-                <div> 
-                  <HighchartsReact
-                    containerProps={{ className: "dimensions" }}
-                    highcharts={Highcharts}
-                    options={highchart_data}
-                  />
-                </div>
+                <LineGraph unit={servers?.outgoing_traffic.unit} usage={servers?.outgoing_traffic.usage} monit={'Outgoing'}/>
               </div>
 
               <div className="box">
-                <div style={{ padding: "0px", height: "45.2px" }}>
-                  <span className="eachCardHeading">Disk{"\n"}</span>
-                  <span style={{ fontSize: "16px", fontWeight: "600" }}> usage </span>
-                  <span style={{ fontSize: "12px", fontWeight: "600" }}>%</span>
-                </div>
-                <div> 
-                  <HighchartsReact
-                    containerProps={{ className: "dimensions" }}
-                    highcharts={Highcharts}
-                    options={optionsPie}
-                  />
-                </div>
+                <PieGraph totalDisk={data.disk} usage={servers?.disk_space.usage}/>
               </div>
           </div>
 
