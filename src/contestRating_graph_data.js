@@ -48,7 +48,7 @@ const obj = {
 		}
 
 const entries = Object.entries(obj);
-console.log(entries);
+//onsole.log(entries);
 
 export const highchart_data = {
   chart: {
@@ -117,7 +117,8 @@ export const optionsPie = {
       text: '',
     },
     tooltip: {
-      enabled: true // Disable tooltips
+      enabled: true, // Disable tooltips
+      valueSuffix: ` %`,
     },
     plotOptions: {
       pie: {
@@ -129,7 +130,7 @@ export const optionsPie = {
     },
     series: [
       {
-        name: 'Share',
+        name: 'Percentage',
         data: [
           { name: 'available', y: 80, color: '#cfc0fa' },
           { name: 'used', y: 20 , color: '#673de6' },
