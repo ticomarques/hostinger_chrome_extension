@@ -9,19 +9,10 @@ interface PieGraphProps {
 }
 
 function PieGraph({totalDisk, usage}: PieGraphProps) {
-
   const diskUsage:number = usage[Object.keys(usage)[Object.keys(usage).length -1]]
-
   const totalUsed:number = ((diskUsage * 100) / (totalDisk * 1000000))
-  console.log("total usado em gb: ", totalUsed)
-
   const totalDiskGb:number = totalDisk / 1024
-  console.log("total disco em gb: ",totalDiskGb)
-
   const totalAvailable = totalDiskGb - totalUsed
-  console.log(totalAvailable)
-
-
 
   const optionsPie = {
       chart: {

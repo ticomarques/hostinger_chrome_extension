@@ -68,7 +68,6 @@ function App() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const info:PlanUsage = await response.json();
-      //console.log("Data from server: ", info);
       setServers(info)
 
     } catch (error) {
