@@ -36,3 +36,40 @@ export interface Plan {
     created_at: string;
 }
 
+
+export interface PlanUsage {
+    cpu_usage: {
+        unit: string;
+        usage: {
+            [key: string]: number;
+        };
+    };
+    ram_usage: {
+        unit: string;
+        usage: {
+            [key: string]: number;
+        };
+    };
+    disk_space: {
+        unit: string;
+        usage: {
+            [key: string]: number;
+        };
+    };
+    outgoing_traffic: {
+        unit: string;
+        usage: {
+            [key: string]: number;
+        };
+    };
+    incoming_traffic: {
+        unit: string;
+        usage: {
+            [key: string]: number;
+        };
+    };
+}
+export interface PlanUsageResponse {
+    data: PlanUsage;
+}
+
