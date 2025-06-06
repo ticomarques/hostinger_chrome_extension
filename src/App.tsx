@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 
-import "./contestRating_graph.css";
-
 import type {Plan, PlanUsage} from './typings';
 
 import AddApiKey from './components/AddApiKey';

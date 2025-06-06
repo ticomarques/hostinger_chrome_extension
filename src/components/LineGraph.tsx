@@ -1,7 +1,7 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
-import "../contestRating_graph.css";
+import "../App.css";
 
 interface LineGraphProps {
   unit: string 
