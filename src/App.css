@@ -50,35 +50,34 @@
 
 .rowFlex {
     display: flex;
-    flexWrap: wrap;
+    flex-wrap: wrap;
     margin: 20px 0 0 0;
 }
 .eachCardHeading {
-    fontWeight: 500;
-    fontSize: 12px;
+    font-weight: 500;
+    font-size: 12px;
     color: rgba(60, 60, 67, 0.6);
-    whiteSpace: pre-wrap;
+    white-space: pre-wrap;
 }
 
-.eachOfThreeCardsContainer {
+/* .eachOfThreeCardsContainer {
     flex: 1;
     minWidth: 238px;
     margin: 0px 0px 15px 12px;
     borderRadius: 8px;
     transition: "all ease 0.3s"
-}
+} */
 
-.eachCard {
-  padding: 12px;
-  borderRadius: 8px;
-  boxShadow: "rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.08) 0px 2px 8px 0px"
-}
-
-
-.makeStyles-eachCard-10 {
+/* .makeStyles-eachCard-10 {
   padding: 12px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.08) 0px 2px 8px 0px;
   border-radius: 8px;
+} */
+
+.eachCard {
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: "rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.08) 0px 2px 8px 0px"
 }
 
 .box {
