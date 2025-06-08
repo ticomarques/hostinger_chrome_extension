@@ -1,6 +1,8 @@
 # Hostinger monitoring extension for chrome
 # Hostinger extensão de monitoramento para chrome
 
+![Alt Screenshot of Hostinger Monitoring Tool for chrome](https://raw.githubusercontent.com/ticomarques/hostinger_chrome_extension/refs/heads/main/doc/screen1.png)
+
 (en-us) This project started to solve the problem of monitoring the status of the hostinger hosting service through the chrome browser. The project is written in typescript and uses the vite build tool.
 
 (pt-br) Este projeto começou para resolver o problema de monitorar o status do serviço de hospedagem do hostinger através do navegador chrome. O projeto está escrito em typescript e utiliza a ferramenta de build vite.
