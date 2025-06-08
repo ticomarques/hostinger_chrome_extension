@@ -44,6 +44,9 @@ function PieGraph({totalDisk, usage}: PieGraphProps) {
           innerSize: '90%',
         },
       ],
+      accessibility: {
+        enabled: false
+      },
     };
 
   return (

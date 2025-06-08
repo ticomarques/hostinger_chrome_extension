@@ -65,6 +65,9 @@ const entries = Object.entries(usage);
       data: entries,
     },
   ],
+  accessibility: {
+    enabled: false
+  },
   navigation: {
     menuItemStyle: {
       fontSize: "10px",
