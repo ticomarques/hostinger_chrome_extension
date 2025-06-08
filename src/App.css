@@ -1,7 +1,7 @@
 #root {
-  max-width: 1280px;
+  max-width: 320px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
@@ -12,9 +12,9 @@
 }
 
 .inputKey {
-  width: 100%;
-  color: rgb(36, 35, 42);
-  font-size: 16px;
+  width: 284px;
+  color: #673de6;
+  font-size: 14px;
   line-height: 20px;
   min-height: 28px;
   border-radius: 4px;
@@ -22,12 +22,17 @@
   border: 2px solid transparent;
   box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
   background: rgb(251, 251, 251);
-  transition: all 0.1s ease 0s;
-  :focus, :active{
-      border: 2px solid rgb(103, 61, 230);
-  }  
+  transition: all 0.1s ease 0s; 
   margin: 0 10px 0 0;   
 }
+.inputKey:focus, .inputKey:active{
+      border: 2px solid rgb(103, 61, 230);
+      color: #673de6;
+  } 
+.inputKey::placeholder {
+  color: #673de6;
+}
+
 .submit-button {
   display: inline-block;
   outline: 0;
@@ -42,6 +47,8 @@
   text-shadow: rgb(0 0 0 / 25%) 0px 3px 8px;
   background: linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%);
   transition: all 0.5s ease 0s;
+  clear: both;
+  margin: 10px 0 0;
   :hover{
       box-shadow: rgb(80 63 205 / 50%) 0px 1px 40px;
       transition: all 0.1s ease 0s;
@@ -85,7 +92,7 @@
   padding: 12px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.08) 0px 2px 8px 0px;
   border-radius: 8px;
-  margin: 0 0 0 20px;
+  margin: 10px 0 0 20px;
 }
 
 .wrapperPlan {
@@ -106,6 +113,7 @@
   font-size: 13px;
   font-weight: bold;
   margin: 6px 0 0 0;
+  color: #666;
 }
 
 .planTitle {

@@ -13,6 +13,11 @@ function App() {
   const [data, setData] = useState<Plan>();
   const [servers, setServers] = useState<PlanUsage>();
 
+  const keyLocalStorage = localStorage.getItem('key');
+  if (keyLocalStorage) {
+    setKey(keyLocalStorage);
+  }
+
 
   //Fetch the plan data
   const handleFetchPlan = async () => {
@@ -82,7 +87,6 @@ function App() {
   return (
     <>
       <h1>Hostinger</h1>
-      
       <AddApiKey handleSubmitKey={handleSubmitKey} handleFetchPlan={handleFetchPlan} />
 
       {data && servers && (
@@ -107,7 +111,6 @@ function App() {
           </div>
 
 
-
           <div className="rowFlex">
               <div className="box">
                 <LineGraph unit={servers?.incoming_traffic.unit} usage={servers?.incoming_traffic.usage} monit={'Incoming'}/>
@@ -121,8 +124,6 @@ function App() {
                 <PieGraph totalDisk={data.disk} usage={servers?.disk_space.usage}/>
               </div>
           </div>
-
-
 
         </div>
       )}

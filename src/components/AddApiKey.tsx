@@ -5,7 +5,7 @@ interface functionProps {
 
 function AddApiKey({handleSubmitKey, handleFetchPlan}: functionProps) {
   return (
-    <div>
+    <div className="wrap-apikey">
         <input
         type="text"
         id="apikey"
@@ -14,7 +14,6 @@ function AddApiKey({handleSubmitKey, handleFetchPlan}: functionProps) {
         className="inputKey"
         onChange={handleSubmitKey}
       />
-      <br /><br />
       <button onClick={handleFetchPlan} className="submit-button">OK</button>
     </div>
   )
